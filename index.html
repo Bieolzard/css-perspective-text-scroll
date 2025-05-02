@@ -11,7 +11,7 @@
 
 <body>
     <article class="starwars">
-        <!-- <div class="film-grain"></div> -->
+        <div class="film-grain"></div>
         <div class="stars"></div>
         <div class="twinkling-stars"></div>
 
@@ -20,49 +20,30 @@
             <source src="https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3" type="audio/mpeg" />
         </audio>
 
-        <!-- Botão Começar -->
+        <!-- Tela Inicial -->
         <div class="start-screen">
-            <button id="start-btn">Começar</button>
+            <div class="start-panel">
+                <label for="episode-select">Escolha o episódio:</label>
+                <select id="episode-select">
+                    <option value="iv" selected>Episódio IV – Uma Nova Esperança</option>
+                    <option value="v">Episódio V – O Império Contra-Ataca</option>
+                    <option value="vi">Episódio VI – O Retorno de Jedi</option>
+                </select>
+                <button id="start-btn">Começar</button>
+            </div>
         </div>
 
         <section class="intro">Há muito tempo, numa galáxia muito, muito distante...</section>
 
         <section class="titles">
-            <div id="crawl-text">
-                <p>Episódio IV</p>
-                <h1>UMA NOVA ESPERANÇA</h1>
-
-                <p>É um período de guerra civil.<br />
-                    Partindo de uma base secreta,<br />
-                    naves rebeldes atacam e<br />
-                    conquistam sua primeira<br />
-                    vitória contra o perverso<br />
-                    Império Galáctico.</p>
-
-                <p>Durante a batalha, espiões<br />
-                    rebeldes conseguem roubar<br />
-                    os planos secretos da arma<br />
-                    decisiva do Império, a<br />
-                    <strong>ESTRELA DA MORTE</strong>, uma<br />
-                    estação espacial blindada<br />
-                    com poder suficiente para<br />
-                    destruir um planeta inteiro.
-                </p>
-
-                <p>Perseguida pelos sinistros<br />
-                    agentes do Império, a <em>princesa Leia</em><br />
-                    apressa-se em voltar<br />
-                    para casa a bordo de sua<br />
-                    nave estelar, protegendo<br />
-                    os planos roubados que<br />
-                    podem salvar seu povo e<br />
-                    restaurar a liberdade na<br />
-                    galáxia....</p>
-            </div>
+            <div id="crawl-text"></div>
         </section>
 
-        <button id="restart-btn">⟳ Recomeçar</button>
-        
+        <div class="controls">
+            <button id="restart-btn">⟳ Recomeçar</button>
+            <button id="audio-toggle">🔊</button>
+            <input id="audio-volume" type="range" min="0" max="1" step="0.01" value="1">
+        </div>
     </article>
 
     <script src="script.js"></script>

@@ -9,6 +9,7 @@ html, body {
   background: #000;
   overflow: hidden;
   margin: 0;
+  cursor: url('cursoslightsaber.cur'), auto;
 }
 
 .starwars {
@@ -57,19 +58,6 @@ html, body {
   pointer-events: none;
 }
 
-/* .film-grain {
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 6;
-  background-image: url('https://www.transparenttextures.com/patterns/noisy.png');
-  background-size: cover;
-  opacity: 0.3;
-  animation: grain 1s steps(2, end) infinite;
-  mix-blend-mode: soft-light;
-} */
-
 @keyframes moveStars {
   0% { background-position: 0 0; }
   100% { background-position: 0 -100px; }
@@ -79,13 +67,6 @@ html, body {
   0%, 100% { opacity: 0.8; }
   50% { opacity: 0.3; }
 }
-
-/* @keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  25% { transform: translate(-1px, 1px); }
-  50% { transform: translate(1px, -1px); }
-  75% { transform: translate(-1px, -1px); }
-} */
 
 .intro {
   position: absolute;
@@ -172,6 +153,48 @@ html, body {
   z-index: 1000;
 }
 
+.start-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border: 2px solid #ffe81f;
+  border-radius: 12px;
+}
+
+.start-panel label {
+  font-size: 1.2rem;
+  color: #ffe81f;
+  text-align: center;
+}
+
+#episode-select {
+  font-family: 'News Cycle', sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: #000;
+  color: #ffe81f;
+  border: 2px solid #ffe81f;
+  border-radius: 6px;
+    cursor: url('cursoslightsaber.cur'), auto;
+
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #ffe81f 50%),
+                    linear-gradient(135deg, #ffe81f 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1rem + 2px), calc(100% - 15px) calc(1rem + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2rem;
+}
+
+#episode-select option {
+  background: #000;
+  cursor: url('cursoslightsaber.cur'), auto;
+  color: #ffe81f;
+}
+
 #start-btn {
   font-size: 1.5rem;
   padding: 1rem 2rem;
@@ -179,14 +202,23 @@ html, body {
   color: #ffe81f;
   border: 2px solid #ffe81f;
   font-family: 'News Cycle', sans-serif;
-  cursor: pointer;
+  cursor: url('cursoslightsaber.cur'), auto;
 }
 
-#restart-btn {
+.controls {
   position: absolute;
   top: 15px;
-  left: 15px;
+  right: 15px;
   z-index: 20;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: url('cursoslightsaber.cur'), auto;
+
+}
+
+#restart-btn,
+#audio-toggle {
   background: rgba(0, 0, 0, 0.6);
   color: #ffe81f;
   border: 1px solid #ffe81f;
@@ -194,11 +226,16 @@ html, body {
   font-family: 'News Cycle', sans-serif;
   font-weight: bold;
   font-size: 16px;
-  cursor: pointer;
+  cursor: url('cursoslightsaber.cur'), auto;
   transition: opacity 0.3s ease;
 }
 
-/* Responsivo */
+#audio-volume {
+  width: 100px;
+  cursor: url('cursoslightsaber.cur'), auto;
+
+}
+
 @media (max-width: 600px) {
   .intro {
     font-size: 120%;
