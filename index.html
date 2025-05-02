@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Wars Crawl</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <article class="starwars">
+        <!-- <div class="film-grain"></div> -->
+        <div class="stars"></div>
+        <div class="twinkling-stars"></div>
+
+        <audio id="theme-audio" preload="auto">
+            <source src="https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.ogg" type="audio/ogg" />
+            <source src="https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3" type="audio/mpeg" />
+        </audio>
+
+        <!-- Botão Começar -->
+        <div class="start-screen">
+            <button id="start-btn">Começar</button>
+        </div>
+
+        <section class="intro">Há muito tempo, numa galáxia muito, muito distante...</section>
+
+        <section class="titles">
+            <div id="crawl-text">
+                <p>Episódio IV</p>
+                <h1>UMA NOVA ESPERANÇA</h1>
+
+                <p>É um período de guerra civil.<br />
+                    Partindo de uma base secreta,<br />
+                    naves rebeldes atacam e<br />
+                    conquistam sua primeira<br />
+                    vitória contra o perverso<br />
+                    Império Galáctico.</p>
+
+                <p>Durante a batalha, espiões<br />
+                    rebeldes conseguem roubar<br />
+                    os planos secretos da arma<br />
+                    decisiva do Império, a<br />
+                    <strong>ESTRELA DA MORTE</strong>, uma<br />
+                    estação espacial blindada<br />
+                    com poder suficiente para<br />
+                    destruir um planeta inteiro.
+                </p>
+
+                <p>Perseguida pelos sinistros<br />
+                    agentes do Império, a <em>princesa Leia</em><br />
+                    apressa-se em voltar<br />
+                    para casa a bordo de sua<br />
+                    nave estelar, protegendo<br />
+                    os planos roubados que<br />
+                    podem salvar seu povo e<br />
+                    restaurar a liberdade na<br />
+                    galáxia....</p>
+            </div>
+        </section>
+
+        <button id="restart-btn">⟳ Recomeçar</button>
+        
+    </article>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

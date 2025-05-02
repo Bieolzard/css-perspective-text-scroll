@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap');
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font: 700 1em 'News Cycle', sans-serif;
+  letter-spacing: 0.15em;
+  color: #ffe81f;
+  background: #000;
+  overflow: hidden;
+  margin: 0;
+}
+
+.starwars {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 300px;
+  background: black;
+}
+
+.vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+  background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background:
+    radial-gradient(1px 1px at 20% 30%, #fff 100%, transparent 0),
+    radial-gradient(1px 1px at 40% 60%, #fff 100%, transparent 0),
+    radial-gradient(1px 1px at 70% 20%, #fff 100%, transparent 0),
+    radial-gradient(1px 1px at 90% 80%, #fff 100%, transparent 0),
+    radial-gradient(1px 1px at 10% 90%, #fff 100%, transparent 0),
+    radial-gradient(1px 1px at 60% 40%, #fff 100%, transparent 0);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: moveStars 120s linear infinite;
+}
+
+.twinkling-stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: transparent;
+  animation: twinkle 2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* .film-grain {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  background-image: url('https://www.transparenttextures.com/patterns/noisy.png');
+  background-size: cover;
+  opacity: 0.3;
+  animation: grain 1s steps(2, end) infinite;
+  mix-blend-mode: soft-light;
+} */
+
+@keyframes moveStars {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -100px; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
+/* @keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+} */
+
+.intro {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 15em;
+  margin-left: -7.5em;
+  font-size: 200%;
+  font-weight: 400;
+  color: rgb(75, 213, 238);
+  opacity: 0;
+  animation: intro 6s ease-out 1s forwards;
+  text-align: center;
+  z-index: 1;
+}
+
+.titles {
+  width: 14.65em;
+  margin-left: -7.325em;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  height: 50em;
+  font-size: 350%;
+  text-align: justify;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg);
+  left: 50%;
+  z-index: 1;
+}
+
+.titles > div {
+  position: absolute;
+  top: 100%;
+  animation: titles 81s linear 6s;
+}
+
+.titles h1,
+.titles p:first-of-type {
+  text-align: center;
+}
+
+.titles p {
+  text-align: justify;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin: 1.35em auto;
+  max-width: 600px;
+  backface-visibility: hidden;
+}
+
+.titles strong {
+  text-transform: uppercase;
+}
+
+.titles em {
+  font-style: italic;
+}
+
+@keyframes intro {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes titles {
+  0% { top: 100%; opacity: 1; }
+  95% { opacity: 1; }
+  100% { top: -100%; opacity: 1; }
+}
+
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#start-btn {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background: #000;
+  color: #ffe81f;
+  border: 2px solid #ffe81f;
+  font-family: 'News Cycle', sans-serif;
+  cursor: pointer;
+}
+
+#restart-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffe81f;
+  border: 1px solid #ffe81f;
+  padding: 8px 14px;
+  font-family: 'News Cycle', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .intro {
+    font-size: 120%;
+    width: 90%;
+    margin-left: -45%;
+  }
+
+  .titles {
+    font-size: 180%;
+    width: 90%;
+    margin-left: -45%;
+  }
+
+  #restart-btn {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  #start-btn {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
