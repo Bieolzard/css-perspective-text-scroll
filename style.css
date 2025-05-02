@@ -235,6 +235,24 @@ html, body {
   cursor: url('cursoslightsaber.cur'), auto;
 
 }
+#fullscreen-btn {
+  font-size: 18px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffe81f;
+  border: 1px solid #ffe81f;
+  font-family: 'News Cycle', sans-serif;
+  cursor: url('cursoslightsaber.curs'), auto;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#fullscreen-btn:hover {
+  background: #ffe81f;
+  color: #000;
+  transform: scale(1.1);
+}
+
+
 
 @media (max-width: 600px) {
   .intro {

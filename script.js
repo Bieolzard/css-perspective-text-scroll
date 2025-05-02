@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const episodeSelect = document.getElementById("episode-select");
   const audioToggle = document.getElementById("audio-toggle");
   const volumeSlider = document.getElementById("audio-volume");
+  const fullscreenBtn = document.getElementById("fullscreen-btn");
 
   const episodes = {
     iv: {
@@ -114,5 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   volumeSlider.addEventListener("input", () => {
     audio.volume = volumeSlider.value;
+  });
+
+  fullscreenBtn.addEventListener("click", () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        alert(`Erro ao tentar ativar tela cheia: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
   });
 });
